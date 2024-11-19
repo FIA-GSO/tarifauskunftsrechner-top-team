@@ -38,7 +38,7 @@ def tarifrechner():
         print(" Sind Sie Mitglied im Duisburger Museumsclub? (Nachweis erforderlich) ")
         print(" Geben Sie ein: 'p' für Premium-Mitglied, 'b' für Basis-Mitglied, oder eine beliebige Taste für kein Mitglied.")
         
-        mitgliedschaft = input().strip().lower()
+        mitgliedschaft = input()
         
         if mitgliedschaft == "p":
             
@@ -46,7 +46,7 @@ def tarifrechner():
             print(f" Preis: {preis_premium} Euro ")
             gesamtsumme += preis_premium
             print(" Möchten Sie für 0,75 € ein Glas Sekt? (j/n)")
-            sekt = input().strip().lower()
+            sekt = input()
             if sekt == "j":
                 gesamtsumme += 0.75
                 
@@ -62,12 +62,12 @@ def tarifrechner():
             gesamtsumme += preis_erwachsene
 
     print(" Möchten Sie ein Ticket für einen halben oder ganzen Tag? (h/g)")
-    ticket_dauer = input().strip().lower()
+    ticket_dauer = input()
 
     while ticket_dauer not in ["h", "g"]:
         
         print("Fehlerhafte Eingabe, versuchen Sie es erneut (h/g):")
-        ticket_dauer = input().strip().lower()
+        ticket_dauer = input()
 
     if ticket_dauer == "g":
         if alter_gast < 14:
@@ -96,7 +96,7 @@ def tarifrechner():
             gesamtsumme += preis_tages_erwachsene
 
     print(" Möchten Sie einen weiteren Tarif abfragen? (j/n)")
-    weitere_abfrage = input().strip().lower()
+    weitere_abfrage = input()
     if weitere_abfrage == "j":
         tarifrechner()
 
@@ -121,13 +121,13 @@ def tarifrechnerEN():
     else:
         print(" Sind Sie Mitglied im Duisburger Museumsclub? (Nachweis erforderlich) ")
         print(" Geben Sie ein: 'p' für Premium-Mitglied, 'b' für Basis-Mitglied, oder eine beliebige Taste für kein Mitglied.")
-        mitgliedschaft = input().strip().lower()
+        mitgliedschaft = input()
         if mitgliedschaft == "p":
             print(" ### Eintritt Premium-Mitglied ### ")
             print(f" Preis: {preis_premium} Euro ")
             gesamtsumme += preis_premium
             print(" Möchten Sie für 0,75 € ein Glas Sekt? (j/n)")
-            sekt = input().strip().lower()
+            sekt = input()
             if sekt == "j":
                 gesamtsumme += 0.75
         elif mitgliedschaft == "b":
@@ -140,11 +140,11 @@ def tarifrechnerEN():
             gesamtsumme += preis_erwachsene
 
     print(" Möchten Sie ein Ticket für einen halben oder ganzen Tag? (h/g)")
-    ticket_dauer = input().strip().lower()
-
+    ticket_dauer = input()
+    
     while ticket_dauer not in ["h", "g"]:
         print("Fehlerhafte Eingabe, versuchen Sie es erneut (h/g):")
-        ticket_dauer = input().strip().lower()
+        ticket_dauer = input()
 
     if ticket_dauer == "g":
         if alter_gast < 14:
@@ -164,7 +164,7 @@ def tarifrechnerEN():
             gesamtsumme += preis_tages_erwachsene
 
     print(" Möchten Sie einen weiteren Tarif abfragen? (j/n)")
-    weitere_abfrage = input().strip().lower()
+    weitere_abfrage = input()
     if weitere_abfrage == "j":
         tarifrechner()
 

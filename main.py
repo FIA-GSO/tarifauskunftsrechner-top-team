@@ -23,13 +23,13 @@ def tarifrechner():
     
     if alter_gast < 14:
         
-        print(" ### Eintritt Kinder ### ")
+        print(" ### Eintritt Kinder Halbtags ### ")
         print(f" Preis: {preis_kinder} Euro ")
         gesamtsumme += preis_kinder
         
     elif 14 <= alter_gast <= 17:
         
-        print(" ### Eintritt Jugendlicher ### ")
+        print(" ### Eintritt Jugendlicher Halbtags ### ")
         print(f" Preis: {preis_jugendlicher} Euro ")
         gesamtsumme += preis_jugendlicher
         
@@ -42,7 +42,7 @@ def tarifrechner():
         
         if mitgliedschaft == "p":
             
-            print(" ### Eintritt Premium-Mitglied ### ")
+            print(" ### Eintritt Premium-Mitglied Halbtags ### ")
             print(f" Preis: {preis_premium} Euro ")
             gesamtsumme += preis_premium
             print(" Möchten Sie für 0,75 € ein Glas Sekt? (j/n)")
@@ -52,12 +52,12 @@ def tarifrechner():
                 
         elif mitgliedschaft == "b":
             
-            print(" ### Eintritt Basis-Mitglied ### ")
+            print(" ### Eintritt Basis-Mitglied Halbtags Halbtags ### ")
             print(f" Preis: {preis_basis} Euro ")
             gesamtsumme += preis_basis
             
         else:
-            print(" ### Eintritt Erwachsene ### ")
+            print(" ### Eintritt Erwachsene Halbtags ### ")
             print(f" Preis: {preis_erwachsene} Euro ")
             gesamtsumme += preis_erwachsene
 
@@ -72,27 +72,27 @@ def tarifrechner():
     if ticket_dauer == "g":
         if alter_gast < 14:
             
-            print(f" Tagesticket Kinder: {preis_tages_kinder} Euro ")
+            print(f" ### Tagesticket Kinder: {preis_tages_kinder} Euro ### ")
             gesamtsumme += preis_tages_kinder
             
         elif 14 <= alter_gast <= 17:
             
-            print(f" Tagesticket Jugendliche: {preis_tages_jugendlicher} Euro ")
+            print(f" ### Tagesticket Jugendliche: {preis_tages_jugendlicher} Euro ### ")
             gesamtsumme += preis_tages_jugendlicher
             
         elif mitgliedschaft == "p":
             
-            print(f" Tagesticket Premium: {preis_tages_premium} Euro ")
+            print(f" ###Tagesticket Premium: {preis_tages_premium} Euro ### ")
             gesamtsumme += preis_tages_premium
             
         elif mitgliedschaft == "b":
             
-            print(f" Tagesticket Basis: {preis_tages_basis} Euro ")
+            print(f" ### Tagesticket Basis: {preis_tages_basis} Euro ### ")
             gesamtsumme += preis_tages_basis
             
         else:
             
-            print(f" Tagesticket Erwachsene: {preis_tages_erwachsene} Euro ")
+            print(f" ### Tagesticket Erwachsene: {preis_tages_erwachsene} Euro ### ")
             gesamtsumme += preis_tages_erwachsene
 
     print(" Möchten Sie einen weiteren Tarif abfragen? (j/n)")
@@ -168,15 +168,17 @@ def tarifrechnerEN():
     if weitere_abfrage == "j":
         tarifrechner()
 
-    print(f" Viel Spaß! Gesamtsumme: {gesamtsumme} Euro")    
+    print("Viel Spaß!")
+    print(f" ### Gesamtsumme: {gesamtsumme} Euro ### ")    
 
 
 # Start des Programms
 print("Sprachauswahl / Language Selection")
 print("DE / EN")
-sprache = input()
 
+sprache = input()
 while sprache not in "DE" or "EN":
+    sprache = input()
     if sprache == "DE": 
         tarifrechner()
     elif sprache == "EN":
